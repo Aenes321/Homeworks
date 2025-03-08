@@ -2,7 +2,7 @@ class is_firmus:
     def __init__(self,x,y) :
         self.x=x
         self.y=y
-    def kural1(self):
+    def rule1(self):
         if 0 in self.x or 0 in self.y:
             a=True
         else :
@@ -32,9 +32,9 @@ class is_firmus:
         y2=self.y[1]-self.y[3]
         if y2<0:
             y2*=-1
-        alan1=x1*x2
-        alan2=y1*y2
-        toplamalan=alan1+alan2
+        area1=x1*x2
+        area2=y1*y2
+        sumarea=area1+area2
         max1=max(self.x[1],self.x[3])
         max2=max(self.y[1],self.y[3])
         max3=max(max1,max2)
@@ -91,20 +91,20 @@ class is_firmus:
             else:
                 kesisim1=1
         if kesisim1+kesisim2==2:
-            print("iki şekil kesisiyor fakat alani hesaplayamam gösterilen sonuçtan küçük olmali")
+            print("Two shapes intersect. It must be smaller than the result shown.")
         if kesisim1!=3:
             b=False
         if a==True:
             if b==True:
                 if kural3==True:
-                    print("FİRMUS",toplamalan)
+                    print("FİRMUS",sumarea)
                 else:
                     print("ADDENDUM","????")
             else:
-                print("DAMNARE",toplamalan)
+                print("DAMNARE",sumarea)
 
         else:
-            print("DAMNARE",toplamalan)
+            print("DAMNARE",sumarea)
 
 
 figure1=is_firmus([0,0,2.4,5.2],[-8.7,10,0,0])
